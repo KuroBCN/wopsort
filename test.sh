@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+mkdir -p out/main && mkdir -p out/test && javac src/*.java -d out/main && javac -cp lib/junit-4.7.jar:out/main test/*.java -d out/test && java -cp out/main:out/test/:lib/junit-4.7.jar org.junit.runner.JUnitCore JunitTestSuite

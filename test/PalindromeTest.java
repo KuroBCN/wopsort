@@ -8,22 +8,19 @@ public class PalindromeTest{
 
     @Test
     public void testIsPalindromeWhenEvenLength() throws Exception{
-        assertTrue(Palindrome.isPalindrome("car truck bus"));
+        assertEquals(Palindrome.orderInput("car trunk bus"),"bus car trunk");
     }
+
     @Test
     public void testIsPalindromeWhenOddLength() throws Exception{
-        assertTrue(Palindrome.isPalindrome("8 4 6 1 -2 9 5"));
+        assertEquals(Palindrome.orderInput("8 4 6 1 -2 9 5"),"-2 1 4 5 6 8 9");
     }
     @Test
     public void testIsNotPalindrome() throws Exception{
-        assertFalse(Palindrome.isPalindrome("car truck 8 4 bus 6 1"));
+        assertEquals(Palindrome.orderInput("car truck 8 4 bus 6 1"),"bus car 1 4 truck 6 8");
     }
     @Test
     public void testIsPalindromeEmpty() throws Exception{
-        assertEquals(true, Palindrome.isPalindrome(""));
-    }
-    @Test(expected=Exception.class)
-    public void testIsPalindromeNull() throws Exception{
-        Palindrome.isPalindrome(null);
+        assertEquals(Palindrome.orderInput(""),"");
     }
 }

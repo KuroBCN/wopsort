@@ -22,23 +22,11 @@ public class MainTest{
         System.setOut(null);
         System.setErr(null);
     }
-    @Test
-    public void testMainIsPalindrome() throws Exception{
-        String[] args = {"1"};
-        Main.main(args);
-        assertEquals("Is Palindrome\n", outContent.toString());
-    }
 
     @Test
-    public void testMainIsNotPalindrome() throws Exception{
-        String[] args = {"12"};
+    public void testFromMain() throws Exception{
+        String[] args = {"truck 8 4 yus 6 1"};
         Main.main(args);
-        assertEquals("Is not palindrome\n", outContent.toString());
-    }
-    @Test
-    public void testMainIsNotPalindromeNull() throws Exception{
-        String[] args = {null};
-        Main.main(args);
-        assertEquals("Is not palindrome\n", outContent.toString());
+        assertEquals("truck 1 4 yus 6 8", outContent.toString());
     }
 }
